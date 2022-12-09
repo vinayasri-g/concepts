@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>validations</title>
+	<script type="text/javascript">
+		function chackValid(){
+			var name=document.formv.name.value;
+			var mobile=document.formv.mobile.value;
+			var email=document.formv.email.value;
+			var reg=/^([a-zA-Z0-9\._]+)@([a-z]+).([a-z]+){2,3}$/;
+			var password=document.formv.password.value;
+			var checkpassword=document.formv.checkpassword.value;
+			if (name==""){
+				alert("Please enter your name");
+				return false;
+			}
+			if(name.length<3){
+				alert("Please check your name");
+				return false;
+			}
+			if(mobile==""){
+				alert("Please enter  your mobile number");
+				return false;
+			}
+			if(isNaN(mobile)|| mobile.lrngth<10){
+				alert("Your mobile number is wrong check it once");
+				return false;
+			}
+			if(email==""){
+				alert("Please enter your emailID");
+				return false;
+			}
+			if(!email.match(reg)){
+				alert("Please check your emailID");
+				return false;
+			}
+			if(password==""){
+				alert("Please check your password");
+				return false;
+			}
+			if(password.length 8){
+				alert("password must carry 8 charecters");
+				return false;
+			}
+			if(checkpassword==""){
+				alert("Please enter your re-type field also");
+				return false;
+			}
+			if(!checkpassword.match(password)){
+				alert("Please check your password and re-type password");
+				return false;
+			}
+			return true;
+
+		}
+	</script>
+</head>
+<body>
+	<h1>Javascript regular expressions</h1>
+	<form name="formv" onsubmit="return checkValid()">
+		<p><input type="text" name="name" placeholder="Enter your name"/></p>
+		<p><input type="text" name="mobile" placeholder="Enter your mpbile number"/></p>
+		<p><input type="text" name="email" placeholder="Enter your email"/></p>
+		<p><input type="password" name="password" placeholder="Enter your password"/></p>
+		<p><input type="password" name="checkpassword" placeholder="Enter your name"/></p>
+		<p><input type="submit" value="Submit"/></p>
+		<p><input type="reset" value="Clear" /></p>
+	</form>
+
+</body>
+</html>

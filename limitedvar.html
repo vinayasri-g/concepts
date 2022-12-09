@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>limitedchar</title>
+	<style type="text/css">
+		*{ margin: 0%;}
+		.message-area{border-style: groove;
+			margin-top: 10%;
+			margin-bottom: 0%;
+			margin-left: 10%;
+		}
+		body{background-color: pink;}
+	</style>
+	<script type="text/javascript">
+		function showCount(){
+			var readMessage=document.getElementById("readMessage").value,left=20-readMessage.length;
+			if(left<=20 && left!=0){document.getElementById("count").innerHTML=left 
+		      }
+			else{document.getElementById("readmessage").style.diaplay="none"
+		        }
+
+		}
+	
+	</script>
+</head>
+<body>
+	<textarea id="readMessage" onkeyup="showCount()" rowes="5" class="message-area"></textarea>
+	<p>Charecter limit is 20:<span id="count"></span></p>
+
+</body>
+</html>
